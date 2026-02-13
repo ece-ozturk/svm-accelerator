@@ -1,7 +1,7 @@
 # cordiv_eval.py
 import numpy as np
 
-iters = 64 # Number of iterations. For this implementation, this is total number of pseudo-rotations
+iters = 17 # Number of iterations. For this implementation, this is total number of pseudo-rotations
 
 # Generate sequence to include repeats for hyperbolic CORDIC
 def hyperbolic_seq(n: int):
