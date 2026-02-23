@@ -1,9 +1,9 @@
 #include "svm_classifier.h"
 #include "exp_cordic.h"
 
-extern double svs[];     // [NSV*DIM]
-extern double alphas[];  // [NSV]
-extern double bias[];    // [1]
+extern double svs[NSV * DIM];     // [NSV*DIM]
+extern double alphas[NSV];  // [NSV]
+extern double bias[1];    // [1]
 
 static const ap_fixed<18, 2> GAMMA = (ap_fixed<18, 2>)0.001;
 
