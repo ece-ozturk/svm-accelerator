@@ -14,7 +14,7 @@ typedef ap_fixed<8, 5>  alpha_t;  // yi*ai : 5 int, 3 frac
 typedef ap_fixed<8, 1>  bias_t;   // b : 1 int, 7 frac
 
 // Prediction output
-typedef ap_uint<1> pred_t;
+typedef ap_uint<8> pred_t;
 
 // Top-level IP
 void svm_classifier(
