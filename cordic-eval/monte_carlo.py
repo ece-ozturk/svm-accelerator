@@ -1,3 +1,4 @@
+
 # monte_carlo.py
 import numpy as np
 from cordic_eval import build_cordic_tables, cordic_array
