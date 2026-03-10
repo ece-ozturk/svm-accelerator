@@ -1,4 +1,3 @@
-
 # monte_carlo.py
 import numpy as np
 from cordic_eval import build_cordic_tables, cordic_array
@@ -50,12 +49,8 @@ def monte_carlo_sweep(n_samples, frac_bits_range, iterations_range,
            list(frac_bits_range), list(iterations_range)
 
 def find_minimum_parameters(meets_target, frac_bits_range, iterations_range):
-    """
-    Find minimum N and F such that the MSE target is met.
-    Sweeps from smallest N and F upward.
-    """
-    for j, n_iter in enumerate(iterations_range):
-        for i, n_frac in enumerate(frac_bits_range):
+    for i, n_frac in enumerate(frac_bits_range):
+        for j, n_iter in enumerate(iterations_range):
             if meets_target[i, j]:
                 return n_frac, n_iter
-    return None, None  # Target not met within sweep range
+    return None, None

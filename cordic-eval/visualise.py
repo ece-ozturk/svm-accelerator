@@ -54,7 +54,7 @@ def plot_results(mse_results, ci_upper_results, meets_target,
     ax3.set_ylabel('Fractional Bits (F)')
     ax3.set_title('Meets Target (95% CI)')
 
-    # Find and mark minimum parameters
+    # Find and mark minimum parameters (minimum F first, then minimum N at that F)
     min_F, min_N = find_minimum_parameters(meets_target, F, N)
     if min_F is not None:
         ax3.plot(min_N, min_F, 'w*', markersize=15,
