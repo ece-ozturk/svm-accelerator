@@ -1,4 +1,10 @@
-/* cordic.cpp - Evaluates CORDIC algorithm given quantised and transformed inputs*/
+/* cordic.cpp
+ * Implementation of CORDIC Algorithm to evaluate exp(x) of input x
+ * m_seq[]: Holds pattern for iterations, accounting for repeats in pattern due to hyperbolic CORDIC
+ * theta_table[]: Holds appropriate theta values according to m_seq[]
+ * cordic(): Evaluates exp(x) using hyperbolic CORDIC algorithm
+ * */
+/* -------------------------------------------------------------------------------------- */
 #include "cordic.h"
 #include "exp_ip.h"
 // Initialise table for iteration sequence, accounting for repeats
@@ -35,7 +41,7 @@ output_t cordic(data_t z)
 	output_t output;				// Output variable
 
 	// Begin CORDIC algorithm, looping through N iterations
-	for (i=0; i<N; i++)
+	cordic_loop:for (i=0; i<N; i++)
 	{
 		// Shift values according to iteration number, repeats handled
 		x_shift = x >> m_seq[i];
